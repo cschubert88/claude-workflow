@@ -1,6 +1,6 @@
 {
   "name": "claude-workflow",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Install a gated AI development workflow for Claude Code into any project",
   "bin": {
     "claude-workflow": "./bin/cli.js"
