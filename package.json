@@ -1,0 +1,20 @@
+{
+  "name": "claude-workflow",
+  "version": "1.0.0",
+  "description": "Install a gated AI development workflow for Claude Code into any project",
+  "bin": {
+    "claude-workflow": "./bin/cli.js"
+  },
+  "files": [
+    "bin/",
+    "template/"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cschubert88/claude-workflow.git"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  }
+}
