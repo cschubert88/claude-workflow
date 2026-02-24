@@ -5,16 +5,13 @@
 const fs = require('fs');
 const path = require('path');
 
-const USAGE = `Usage: claude-workflow init [--force]
+const USAGE = `Usage: claude-workflow init
 
 Install the Claude Code development workflow into the current project.
-
-Options:
-  --force    Overwrite existing files`;
+Existing files are never overwritten.`;
 
 const args = process.argv.slice(2);
 const command = args.find((a) => !a.startsWith('--'));
-const force = args.includes('--force');
 
 if (command !== 'init') {
   console.log(USAGE);
@@ -52,14 +49,9 @@ for (const relPath of files) {
   const dest = path.join(destDir, relPath);
   const exists = fs.existsSync(dest);
 
-  if (exists && !force) {
+  if (exists) {
     console.log(`  \x1b[33mskip\x1b[0m  ${relPath} (already exists)`);
     skipped++;
-  } else if (exists && force) {
-    fs.mkdirSync(path.dirname(dest), { recursive: true });
-    fs.copyFileSync(src, dest);
-    console.log(`  \x1b[35moverwrite\x1b[0m  ${relPath}`);
-    installed++;
   } else {
     fs.mkdirSync(path.dirname(dest), { recursive: true });
     fs.copyFileSync(src, dest);

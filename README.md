@@ -8,7 +8,7 @@ Install a gated AI development workflow for Claude Code into any project.
 npx github:cschubert88/claude-workflow init
 ```
 
-Use `--force` to overwrite existing files.
+Existing files are never overwritten -- your customizations are always safe.
 
 ## What gets installed
 
@@ -53,10 +53,7 @@ The pipeline is gated: `/explore` -> `/create-plan` -> `/execute` -> `/review`.
 | `/document` | Update documentation from actual code changes |
 | `/learning-opportunity` | Pause and learn a concept at three depth levels |
 
-## Options
-
-`--force` overwrites all existing workflow files with the latest versions from the package.
-
 ## Updating
 
-Re-run with `--force` to overwrite existing files with the latest versions.
+Re-run `npx github:cschubert88/claude-workflow init` to pick up new files.
+Existing files are skipped, so your customizations are preserved.
